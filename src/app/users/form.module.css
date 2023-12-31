@@ -82,3 +82,8 @@
   border-radius: 100px;
   cursor: pointer;
 }
+
+.hyperlink {
+  float: right;
+  margin: 1rem 0;
+}

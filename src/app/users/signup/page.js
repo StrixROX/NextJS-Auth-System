@@ -52,6 +52,7 @@ export default function SignUpPage() {
             <input type="password" name="password" placeholder="Password" required tabIndex={3} />
             <input type="password" name="password-re" placeholder="Confirm password" required tabIndex={4} />
             <input type="submit" value="Sign up" />
+            <a href="/users/signin" className={styles.hyperlink}>Sign in</a>
           </form>
         </div>
       </div>
