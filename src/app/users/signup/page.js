@@ -6,23 +6,37 @@ import { redirect } from "next/navigation"
 import SignUpHandler from "./signup"
 import { useState } from 'react'
 
+function validate(formData) {
+  const errList = []
+
+  // validation checks
+  if (formData.get('password') !== formData.get('password-re')) {
+    errList.push('Passwords do not match')
+  }
+
+  return {
+    isValid: (errList.length === 0),
+    errList
+  }
+}
+
 export default function SignUpPage() {
   const [errors, setErrors] = useState([])
 
   async function handleSubmit(formData) {
-    if (formData.get('password') !== formData.get('password-re')) {
-      setErrors(['Passwords do not match'])
-
+    const { isValid, errList } = validate(formData)
+    if (!isValid) {
+      setErrors(errList)
       return false
     }
 
     const { success, msgs } = await SignUpHandler(formData)
-
-    if (success) {
-      redirect('/users', 'push')
+    if (!success) {
+      setErrors(msgs)
+      return false
     }
 
-    setErrors(msgs)
+    redirect('/users', 'push')
   }
 
   return (
