@@ -1,0 +1,84 @@
+.wrapper {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #D3EDFF;
+}
+
+.card {
+  display: flex;
+  width: 80vw;
+  max-width: 1600px;
+  height: 80vh;
+  max-height: 900px;
+  background-color: white;
+  border: 1px solid #63BEFF;
+  border-radius: 25px;
+  box-shadow: 0 25px 4px -10px #00000050;
+  overflow: hidden;
+}
+
+.banner {
+  width: 50%;
+  height: 100%;
+  background-color: #082847;
+  object-fit: cover;
+  object-position: 75% center;
+}
+
+.formWrapper {
+  display: grid;
+  align-items: center;
+  padding: 6%;
+  width: 50%;
+  overflow: auto;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-family: 'DM Serif Display';
+  font-size: 3rem;
+  color: #051936;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form .error {
+  color: rgb(244, 48, 48);
+  font-style: italic;
+}
+
+.form input:not([type=submit]) {
+  margin: 0.8rem 0;
+  padding: 0.5rem 0;
+  width: 100%;
+  color: #273F63;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  outline:none;
+  transition: box-shadow 0.1s;
+}
+.form input:not([type=submit])::placeholder {
+  color: currentColor;
+}
+.form input:not([type=submit]):active,
+.form input:not([type=submit]):focus {
+  box-shadow: 0 2px 0 0 currentColor;
+}
+
+.form input[type=submit] {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #0B3359;
+  border-radius: 100px;
+  cursor: pointer;
+}
