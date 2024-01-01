@@ -1,0 +1,73 @@
+.wrapper {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #D3EDFF;
+}
+
+.card {
+  display: flex;
+  width: 80vw;
+  max-width: 1600px;
+  height: 80vh;
+  max-height: 900px;
+  background-color: white;
+  border: 1px solid #63BEFF;
+  border-radius: 25px;
+  box-shadow: 0 25px 4px -10px #00000050;
+  overflow: hidden;
+}
+
+.banner {
+  width: 50%;
+  height: 100%;
+  background-color: #082847;
+  object-fit: cover;
+  object-position: 75% center;
+}
+
+.formWrapper {
+  display: grid;
+  align-items: center;
+  padding: 3rem;
+  width: 50%;
+  overflow: auto;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-family: 'DM Serif Display';
+  font-size: 3rem;
+  color: #051936;
+}
+
+.hyperlink {
+  float: right;
+  margin: 1rem 0;
+}
+
+@media (max-width: 1000px) {
+  .card {
+    flex-direction: column;
+    width: 100vw;
+    max-width: unset;
+    height: 100vh;
+    max-height: unset;
+    border: none;
+    border-radius: 0;
+    overflow: auto;
+  }
+  
+  .banner {
+    width: 100%;
+    height: 30%;
+  }
+
+  .formWrapper {
+    justify-content: center;
+    width: 100%;
+    overflow: visible;
+  }
+
+}

@@ -1,0 +1,17 @@
+.greeting {
+  margin-bottom: 1rem;
+  font-family: 'DM Serif Display';
+  font-size: 3rem;
+}
+
+.links {
+  font-size: 1rem;
+}
+
+.links button {
+  font-size: inherit;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

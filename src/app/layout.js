@@ -1,5 +1,6 @@
 import './globals.css'
 
+import styles from './layout.module.css'
 import UserProvider from './context/userContext'
 
 export const metadata = {
@@ -11,7 +12,16 @@ export default function RootLayout({ children }) {
   return (
     <UserProvider>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          <div className={styles.wrapper}>
+            <div className={styles.card}>
+              <img src="/images/banner.webp" alt="Banner" className={styles.banner} />
+              <div className={styles.formWrapper}>
+                {children}
+              </div>
+            </div>
+          </div>
+        </body>
       </html>
     </UserProvider>
   )
