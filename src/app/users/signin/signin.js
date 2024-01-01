@@ -31,7 +31,7 @@ export default async function SignInHandler(formData) {
         username: user.username
       }
 
-      accessToken = jwt.sign(userData, process.env.ACCESS_TOKEN_SECRET)
+      accessToken = jwt.sign(userData, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "10m" })
     }
     else {
       msgs.push('Incorrect password')
