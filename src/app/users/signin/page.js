@@ -3,24 +3,24 @@
 import styles from '../form.module.css'
 
 import { useState } from 'react'
-import { redirect } from "next/navigation"
-import SignInHandler from "./signin"
-import { useChangeUser } from '@/app/context/userContext'
+import { redirect } from 'next/navigation'
+import SignInHandler from './signin'
+import { useUpdateUser } from '@/app/context/userContext'
 
-export default function SignUpPage() {
+export default function SignInPage() {
   const [errors, setErrors] = useState([])
-
-  const changeUser = useChangeUser()
+  const updateUser = useUpdateUser()
 
   async function handleSubmit(formData) {
-    const { success, user, msgs } = await SignInHandler(formData)
-    if (!success) {
-      setErrors(msgs)
-      return false
-    }
+    const { success, accessToken, msgs } = await SignInHandler(formData)
 
-    changeUser(user)
-    redirect('/', 'push')
+    if (success) {
+      localStorage.setItem('myapp.AccessToken', accessToken)
+      updateUser()
+      redirect('/', 'push')
+    } else { 
+      setErrors(msgs)
+    }
   }
 
   return (
