@@ -9,6 +9,7 @@
 }
 
 .links button {
+  padding: 0;
   font-size: inherit;
   text-decoration: underline;
   border: none;
