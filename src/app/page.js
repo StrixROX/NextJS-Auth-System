@@ -1,6 +1,5 @@
 'use client'
 
-import { redirect } from 'next/navigation'
 import styles from './home.module.css'
 
 import { useSignOut, useUser } from '@/app/context/userContext'
@@ -8,10 +7,6 @@ import { useSignOut, useUser } from '@/app/context/userContext'
 export default function Home() {
   const user = useUser()
   const signOut = useSignOut()
-
-  if (!user) {
-    redirect('/users/signin', 'push')
-  }
 
   return (
     <div>
