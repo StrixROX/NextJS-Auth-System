@@ -33,6 +33,10 @@ export default async function SignInHandler(formData) {
 
   return {
     success: isCorrectPassword,
+    user: {
+      name: user?.name,
+      username: user?.username
+    },
     msgs
   }
 }

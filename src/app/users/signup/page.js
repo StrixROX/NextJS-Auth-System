@@ -36,7 +36,7 @@ export default function SignUpPage() {
       return false
     }
 
-    redirect('/users', 'push')
+    redirect('/users/signin', 'push')
   }
 
   return (

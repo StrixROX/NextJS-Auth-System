@@ -2,21 +2,25 @@
 
 import styles from '../form.module.css'
 
+import { useState } from 'react'
 import { redirect } from "next/navigation"
 import SignInHandler from "./signin"
-import { useState } from 'react'
+import { useChangeUser } from '@/app/context/userContext'
 
 export default function SignUpPage() {
   const [errors, setErrors] = useState([])
 
+  const changeUser = useChangeUser()
+
   async function handleSubmit(formData) {
-    const { success, msgs } = await SignInHandler(formData)
+    const { success, user, msgs } = await SignInHandler(formData)
     if (!success) {
       setErrors(msgs)
       return false
     }
 
-    redirect('/users', 'push')
+    changeUser(user)
+    redirect('/', 'push')
   }
 
   return (
